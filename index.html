@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mohit Sharma - Principal Systems Architect</title>
+  <style>
+    /* ==========================================================================
+       RESET & BASE SETUP
+       ========================================================================== */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: #1a202c;
+      background-color: #f7fafc;
+      line-height: 1.44;
+      font-size: 9.6pt;
+      -webkit-font-smoothing: antialiased;
+      overflow-wrap: break-word;
+    }
+
+    /* ==========================================================================
+       SCREEN VIEW CONTAINER
+       ========================================================================== */
+    .page {
+      background: #ffffff;
+      max-width: 840px;
+      width: 92%;
+      margin: 24px auto;
+      padding: 36px 44px;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.07);
+      border-radius: 4px;
+    }
+
+    .top-actions {
+      display: flex;
+      justify-content: flex-end;
+      margin-bottom: 12px;
+    }
+
+    .print-btn {
+      cursor: pointer;
+      padding: 6px 14px;
+      font-size: 8.5pt;
+      font-weight: 600;
+      color: #2b6cb0;
+      background: #ffffff;
+      border: 1px solid #cbd5e0;
+      border-radius: 4px;
+      transition: all 0.15s ease;
+    }
+
+    .print-btn:hover {
+      background: #ebf8ff;
+      border-color: #2b6cb0;
+    }
+
+    /* ==========================================================================
+       HEADER & IDENTITY
+       ========================================================================== */
+    header {
+      border-bottom: 2px solid #2b6cb0;
+      padding-bottom: 10px;
+      margin-bottom: 14px;
+    }
+
+    .name-title {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 6px;
+    }
+
+    h1 {
+      font-size: 21pt;
+      font-weight: 800;
+      color: #1a365d;
+      letter-spacing: -0.5px;
+      line-height: 1;
+    }
+
+    .target-role {
+      font-size: 10pt;
+      font-weight: 700;
+      color: #2b6cb0;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      line-height: 1;
+    }
+
+    .contact-bar {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 16px;
+      font-size: 8.8pt;
+      color: #4a5568;
+    }
+
+    .contact-bar a {
+      color: #2b6cb0;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .contact-bar a:hover {
+      text-decoration: underline;
+    }
+
+    /* ==========================================================================
+       SECTIONS & EXPERIENCE
+       ========================================================================== */
+    section {
+      margin-bottom: 14px;
+    }
+
+    h2 {
+      font-size: 10pt;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      color: #2b6cb0;
+      border-bottom: 1px solid #e2e8f0;
+      padding-bottom: 3px;
+      margin-bottom: 8px;
+    }
+
+    .job {
+      margin-bottom: 16px; /* Increases separation between roles */
+      padding-bottom: 4px;
+    }
+    .job:not(:last-child) {
+      border-bottom: 1px solid #edf2f7;
+      padding-bottom: 12px;
+      margin-bottom: 14px;
+    }
+
+    .job-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 4px;
+      margin-bottom: 2px;
+    }
+
+    /* High-contrast Role & Company Highlight */
+    .job-title-company {
+      font-size: 10.2pt;
+      font-weight: 700;
+      color: #1a365d;
+      letter-spacing: -0.2px;
+    }
+
+    .job-title-company span,
+    .job-company {
+      color: #2b6cb0 !important;
+      font-weight: 700;
+      margin-left: 2px;
+    }
+
+    .job-date {
+      font-size: 8.8pt;
+      font-weight: 600;
+      color: #4a5568;
+      white-space: nowrap;
+    }
+
+    .job-subteam {
+      font-size: 8.8pt;
+      font-style: italic;
+      font-weight: 500;
+      color: #4a5568;
+      margin-bottom: 4px;
+    }
+
+    /* Left-aligned, readable bullet points */
+    ul {
+      list-style-type: disc;
+      padding-left: 18px;
+      margin-top: 3px;
+    }
+
+    li {
+      margin-bottom: 3.5px;
+      font-size: 9.1pt;
+      line-height: 1.42;
+      color: #2d3748;
+      text-align: left;
+    }
+
+    li strong {
+      color: #1a202c;
+      font-weight: 600;
+    }
+
+    /* ==========================================================================
+       SKILLS, PUBLICATIONS & EDUCATION
+       ========================================================================== */
+    .skills-block {
+      font-size: 8.9pt;
+      line-height: 1.48;
+      color: #2d3748;
+    }
+
+    .skills-block div {
+      margin-bottom: 3px;
+    }
+
+    .skills-label {
+      font-weight: 700;
+      color: #1a365d;
+    }
+
+    .pub-item, .edu-item {
+      margin-bottom: 6px;
+      font-size: 8.9pt;
+      line-height: 1.4;
+      color: #2d3748;
+    }
+
+    .pub-item strong, .edu-item strong {
+      color: #1a202c;
+    }
+
+    .tag {
+      display: inline-block;
+      background-color: #ebf8ff;
+      color: #2b6cb0;
+      border: 1px solid #bee3f8;
+      font-size: 7.2pt;
+      font-weight: 700;
+      padding: 1px 6px;
+      border-radius: 3px;
+      text-transform: uppercase;
+      margin-right: 6px;
+      vertical-align: middle;
+    }
+
+   
+    /* ==========================================================================
+       PRINT ENGINE: FULL MARGIN RECOVERY (TOP, BOTTOM, LEFT, RIGHT)
+       ========================================================================== */
+    @page {
+      size: A4 portrait;
+      margin: 0; /* Let .page control the exact 14mm/16mm padding on every page */
+    }
+
+    @media print {
+      html, body {
+        background: #ffffff !important;
+        font-size: 9pt;
+        line-height: 1.34;
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+      }
+
+      .page {
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 !important;
+        /* Applies 14mm Top/Bottom and 16mm Left/Right to EVERY page */
+        padding: 14mm 16mm !important;
+        box-sizing: border-box !important;
+        box-shadow: none !important;
+        border-radius: 0 !important;
+        border: none !important;
+
+        /* CRITICAL: Clones the padding onto Page 2, Page 3, etc. instead of slicing it */
+        -webkit-box-decoration-break: clone !important;
+        box-decoration-break: clone !important;
+      }
+
+      .no-print, .top-actions {
+        display: none !important;
+      }
+
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+
+      /* Keep individual sections unbroken across page splits */
+      .job, .pub-item, .edu-item, .skills-block {
+        page-break-inside: avoid;
+        break-inside: avoid;
+      }
+
+      h2 {
+        page-break-after: avoid;
+        break-after: avoid;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="page">
+  <!-- Print Button (Hidden in Print) -->
+  <div class="top-actions no-print">
+    <button class="print-btn" onclick="window.print()">🖨️ Print / Save as PDF</button>
+  </div>
+
+  <!-- Header -->
+  <header>
+    <div class="name-title">
+      <h1>MOHIT SHARMA</h1>
+      <div class="target-role">Principal Systems Architect</div>
+    </div>
+    <div class="contact-bar">
+      <span>📍 Bengaluru, India</span>
+      <span>📞 +91-9868556570</span>
+      <span>✉️ <a href="mailto:msharma.iitk@gmail.com">msharma.iitk@gmail.com</a></span>
+      <span>🔗 <a href="https://linkedin.com/in/mohit-curious" target="_blank" rel="noopener">linkedin.com/in/mohit-curious</a></span>
+    </div>
+  </header>
+
+  <!-- Professional Experience -->
+  <section>
+    <h2>Professional Experience</h2>
+
+    <!-- Adobe (Current) -->
+    <div class="job">
+      <div class="job-header">
+        <div class="job-title-company">Principal Engineering Architect (P55) <span class="job-company">| Adobe</span></div>
+        <div class="job-date">2025 – Present</div>
+      </div>
+      <div class="job-subteam">Adobe Learning Manager (ALM) Platform Architecture</div>
+        <ul>
+          <li><strong><u>Coined &amp; Resolved the ‘Whale-Effect’:</u></strong> Architected an asynchronous <strong>Lazy Enrollment engine</strong> that eradicated a <strong>20M-row MySQL write fan-out</strong> per bulk admin action, eliminating RDS write I/O surges and lock contention.</li>
+          <li><strong>Storage Optimization &amp; Lifecycle Extension:</strong> Purged unstarted course bloat across an eager enrollment architecture, reclaiming <strong>350 GB of primary AWS RDS MySQL storage (including 150 GB in secondary indexes)</strong> by purging unstarted course bloat; slashed cloud IOPS/memory costs and <strong>avoided a 6-month distributed database re-platforming effort (TiDB)</strong>.</li>
+          <li><strong>Downstream Blast-Radius Containment:</strong> Phased migration to protect reporting SLAs—re-denormalized CDC streams via <strong>Spark EMR</strong> into <strong>Delta Lake</strong>, preventing breaking schema changes across Kafka, compliance dashboards, and <strong>OpenSearch</strong>.</li>
+          <li><strong><u>Enterprise SDLC AI Platform</u> (<code>ALM-Context</code>):</strong> Standardized AI engineering across <strong>200+ active repositories</strong>, centralizing codebase intelligence (API contracts, DB schemas, domain workflows, and machine-readable repo skills).</li>
+          <li><strong>Governed Multi-Repo AI Workflows:</strong> Automated a two-phase AI pipeline translating PRDs into <strong>HLDs, schema updates, code changes, and cross-repo PR dependency DAGs</strong>, compressing feature discovery from days to hours.</li>
+          <li><strong>Proactive AI Telemetry Diagnostics:</strong> Engineered an <strong>AI diagnostic workflow via MCP (Model Context Protocol)</strong> over Splunk logs and MySQL query profiles, discovering latent write amplification overlooked by standard APM tools.</li>
+        </ul>
+    </div>
+
+    <!-- Microsoft -->
+    <div class="job">
+      <div class="job-header">
+        <div class="job-title-company">Principal Software Engineer <span class="job-company">| Microsoft</span></div>
+        <div class="job-date">2024 – 2025</div>
+      </div>
+      <div class="job-subteam">M365 Office Online Infrastructure &amp; Shared Services</div>
+      <ul>
+        <li><strong>Planetary ARM64 Fleet Modernization:</strong> Spearheaded the fleet-wide compute migration from <strong>x86 to ARM64</strong> across 100+ datacenters for 5 core Office apps, slashing VM costs by <strong>30%</strong> and boosting throughput by <strong>25%</strong>.</li>
+        <li><strong>Petabyte Telemetry &amp; FinOps (Charter 1):</strong> Overhauled <strong>ETS and Kusto (Azure Data Explorer)</strong> pipelines across 100+ datacenters via <strong>smart-sampling algorithms</strong> and pre-aggregated KPIs, securing <strong>$xxM in annualized savings</strong>.</li>
+        <li><strong>Global Compliance &amp; Data Residency:</strong> Enforced strict regulatory boundaries across telemetry ingestion (<strong>EU GDPR and US Federal boundaries</strong>), eliminating unauthorized cross-region log replication.</li>
+        <li><strong>Core Shared Routing Microservices (Charter 2):</strong> Led high-throughput routing and session orchestration microservices serving hundreds of millions of daily users across Word, Excel, PowerPoint, OneNote, and Visio.</li>
+        <li><strong>Autonomous AIOps Remediation (Charter 3):</strong> Engineered an AI-driven incident auto-remediation platform automating triage and runbook mitigations, drastically slashing <strong>MTTM</strong> across a <strong>~50-person organization</strong>.</li>
+      </ul>
+    </div>
+
+    <!-- Google -->
+    <div class="job">
+      <div class="job-header">
+        <div class="job-title-company">Tech Lead / Senior Software Engineer <span class="job-company">| Google</span></div>
+        <div class="job-date">2021 – 2024</div>
+      </div>
+      <div class="job-subteam">Google Search Page Ads (Vehicle Ads Vertical &amp; Serving Infrastructure)</div>
+      <ul>
+        <li><strong>Config-Driven Building-Block Platform:</strong> Architected a declarative ad platform automating <strong>AdMixer auction registration</strong> and <strong>server-side rendering</strong>; cut vertical time-to-market by <strong>60%</strong> and saved <strong>80% in developer effort</strong>.</li>
+        <li><strong>Monetization &amp; Vehicle Ads Leadership:</strong> Served as Format Tech Lead for Search Page Ads (Vehicle Ads vertical), refining AI ranking and visual formats to directly deliver <strong>$xxxM in ARR</strong>.</li>
+        <li><strong>Ad-Serving Pipeline Re-Architecture:</strong> Re-architected core ad-serving ingestion and retrieval pipelines under surging query volumes, <strong>increasing QPS and cutting operational serving costs by 15%</strong>.</li>
+      </ul>
+    </div>
+
+    <!-- Adobe (Earlier) -->
+    <div class="job">
+      <div class="job-header">
+        <div class="job-title-company">Computer Scientist 2 / MTS 2 <span class="job-company">| Adobe</span></div>
+        <div class="job-date">2016 – 2021, 2012 – 2014</div>
+      </div>
+      <div class="job-subteam">Enterprise Commerce, Creative Cloud &amp; Primetime</div>
+      <ul>
+        <li><strong>Adobe Sign Monolith Decomposition:</strong> Led the domain-driven decoupling of the Adobe Sign core monolith into decoupled microservices, drastically reducing blast radiuses.</li>
+        <li><strong>Enterprise Workflow &amp; Batch Systems:</strong> Built a fault-tolerant async workflow engine for partner marketplaces; restructured batch packaging to a <strong>master-worker model</strong>, multiplying throughput.</li>
+        <li><strong>Adobe Primetime Media Server:</strong> Engineered streaming infrastructure sustaining <strong>100K+ concurrent live streams</strong>; authored late-binding <strong>Alternate Audio</strong> in Adobe Media Server.</li>
+      </ul>
+    </div>
+
+    <!-- Octro -->
+    <div class="job">
+      <div class="job-header">
+        <div class="job-title-company">Senior MTS <span class="job-company">| Octro.com</span></div>
+        <div class="job-date">2014 – 2015</div>
+      </div>
+      <div class="job-subteam">Real-Time Gaming Infrastructure &amp; Retention</div>
+      <ul>
+        <li><strong>High-Concurrency Socket Networking:</strong> Scaled custom TCP socket layers and simulation bots to <strong>450K+ persistent concurrent connections</strong>.</li>
+        <li><strong>Live Behavioral Profiling &amp; Dynamic Odds:</strong> Built sub-second analytics for <strong>1M+ live users</strong>; formulated dynamic probability algorithms calculating live betting odds during ICC cricket matches.</li>
+        <li><strong>Fraud Mitigation &amp; Revenue Protection:</strong> Designed an automated transaction risk and fraud detection engine, averting <strong>$xxM in potential platform leakage</strong>.</li>
+      </ul>
+    </div>
+
+    <!-- Amazon -->
+    <div class="job">
+      <div class="job-header">
+        <div class="job-title-company">Software Development Engineer <span class="job-company">| Amazon</span></div>
+        <div class="job-date">2011 – 2012</div>
+      </div>
+      <div class="job-subteam">Flexible Payment Service (FPS)</div>
+      <ul>
+        <li><strong>Release Engineering:</strong> Orchestrated zero-downtime Java runtime upgrades and production deployments across 100+ servers and 20+ core payment services.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Core Competencies -->
+  <section>
+    <h2>Core Competencies &amp; Technical Domains</h2>
+    <div class="skills-block">
+      <div><span class="skills-label">Architecture &amp; Systems:</span> Distributed Systems, Concurrency &amp; Low Latency, Write Amplification Mitigation, Microservices Decomposition, Event-Driven Architecture, Lakehouse Analytics, Telemetry Strategy.</div>
+      <div><span class="skills-label">Languages &amp; Runtimes:</span> Java, Erlang, React JS, RESTful APIs, gRPC, Model Context Protocol (MCP).</div>
+      <div><span class="skills-label">Cloud &amp; Infrastructure:</span> Kubernetes, Docker, AWS, Azure, Multi-Datacenter Shared Services, ARM64 Fleet Modernization, Observability (ETS, Kusto, Splunk).</div>
+      <div><span class="skills-label">Data &amp; Streaming Engines:</span> Kafka, Debezium CDC, AWS SQS, Spark EMR, Delta Lake, Trino, OpenSearch (Semantic/Vector Search), MySQL, Redis, PostgreSQL.</div>
+    </div>
+  </section>
+
+  <!-- Publications & Honors -->
+  <section>
+    <h2>Publications &amp; Honors</h2>
+    <div class="pub-item">
+      <span class="tag">Best Paper Award</span>
+      <strong>“Hybrid MultihopLQI for Improving Asymmetric Links in Wireless Sensor Networks”</strong> — <em>IEEE AICT (2010)</em>. Dynamic link-routing algorithm for sensor topologies.
+    </div>
+    <div class="pub-item">
+      <strong>“Face recognition system robust to occlusion”</strong> — <em>Springer ICIC (2011)</em>. Applied PCA transformations, achieving a <strong>98.9% recognition rate</strong>.
+    </div>
+    <div class="pub-item">
+      <strong>“An efficient partial occluded face recognition”</strong> — <em>IEEE Neurocomputing Journal (2013)</em>. Wavelet transforms achieving a <strong>97.0% identification rate</strong>.
+    </div>
+  </section>
+
+  <!-- Education & Fellowships -->
+  <section>
+    <h2>Education &amp; Fellowships</h2>
+    <div class="edu-item">
+      <strong>Indian Institute of Technology (IIT), Kanpur</strong> | Dual Degree: B.Tech &amp; M.Tech in Computer Science (2006 – 2011)
+      <br>
+      <span style="font-size: 8.4pt; color: #4a5568;">Undergraduate Teaching Assistant | Research Assistant, Biometrics Research Lab (Prof. Phalguni Gupta)</span>
+    </div>
+    <div class="edu-item">
+      <strong>CNRS-SAMOVAR Lab, Télécom SudParis (France)</strong> | Summer Research Fellow (2009)
+    </div>
+  </section>
+</div>
+
+</body>
+</html>
